@@ -1,0 +1,56 @@
+entidades
+
+usuarios{
+   nome_user; cod_user; senha_user; dat_nasc_user; endereco_user; rua_user; 
+   num_user;  
+}
+
+cidade_fort{
+   cod_bairro_fort; nome_bairro_fort;   
+}
+
+coleta_horario_fort{
+   cod_hora_rua; nome_rua_bairro_fort; hora_coleta; 
+}
+
+
+
+
+
+
+table usuario{
+CREATE TABLE usuario(
+	cod_user int(5) AUTO_INCREMENT, 
+    nome_user varchar(100) NOT null, 
+    senha_user int(10) not null,
+    dat_nasc_user varchar(11) not null, 
+    endereco_user varchar(100) not null, 
+    rua_user varchar(50) not null, 
+    num_user int(5) not null,
+    PRIMARY KEY(cod_user)
+);
+
+INSERT INTO `usuario`(`cod_user`, `nome_user`, `senha_user`, `dat_nasc_user`, `endereco_user`, `rua_user`, `num_user`) VALUES (1,'Kayo Fernando', 12345,'03/08/06','Demócrito Rocha','Travessa Júlio Ribeiro',33),
+(2,'João Guilherme', 23456,'12/01/06','Demócrito Rocha','Travessa Júlio Ribeiro',36),
+(3,'Ana Luiza', 34567,'03/02/06','Demócrito Rocha','Travessa Júlio Ribeiro',38),
+(4,'Jorge Aragão', 45678,'22/10/06','Demócrito Rocha','Travessa Júlio Ribeiro',40)}
+
+
+table cidade{
+CREATE TABLE cidade_fort(
+	cod_bairro_fort int(5) AUTO_INCREMENT, 
+    nome_bairro_fort varchar(100) NOT null,
+    PRIMARY KEY(cod_bairro_fort)
+);
+
+
+INSERT INTO `cidade_fort`(`cod_bairro`, `nome_bairro`)
+VALUES (1,'democrito rocha')
+}
+
+CREATE TABLE coleta_horario_fort(
+	cod_hora_rua int(5) AUTO_INCREMENT, 
+    nome_rua_bairro_fort varchar(100) NOT null,
+    hora_coleta varchar(50) not null,
+    PRIMARY KEY(cod_hora_rua)
+);
